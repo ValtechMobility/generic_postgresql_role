@@ -1,0 +1,30 @@
+generic_postgresql_data_path: /opt/postgresql
+generic_postgresql_subfolder: []
+generic_postgresql_username: postgresql
+generic_postgresql_uid: 2002
+generic_postgresql_groupname: postgresql
+generic_postgresql_gid: 2002
+
+# Ports that should be opened in ufw
+generic_postgresql_allow_firewall_ports: []
+
+generic_postgresql_container_count: 1
+generic_postgresql_container_name: postgresql
+generic_postgresql_container_image: postgres
+generic_postgresql_container_ports: []
+generic_postgresql_container_volumes:
+  - "{{ generic_postgresql_data_path }}:/var/lib/postgresql"
+generic_postgresql_container_links: []
+generic_postgresql_container_env: {}
+
+generic_postgresql_container_state: started
+generic_postgresql_container_recreate: no
+generic_postgresql_container_auto_remove: no
+generic_postgresql_container_cpu_quota: 0
+generic_postgresql_container_memory: 0
+generic_postgresql_container_memory_reservation: 0
+generic_postgresql_container_memory_swap: 0
+generic_postgresql_container_network_mode: default
+generic_postgresql_container_networks: []
+generic_postgresql_container_restart: no
+generic_postgresql_container_restart_policy: unless-stopped

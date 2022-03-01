@@ -1,0 +1,20 @@
+galaxy_info:
+  role_name: generic_postgresql_role
+  description: A role to deploy Postgresql in a Docker container.
+  author: Valtech Mobility
+  company: Valtech Mobility
+
+  issue_tracker_url: https://intranet.valtech.com/vita/projects/VMCQ
+
+  min_ansible_version: 2.9
+
+  platforms:
+  - name: Ubuntu
+    versions:
+    - ">= 18.04"
+
+  galaxy_tags:
+  - postgresql
+  - ubuntu
+
+dependencies: []
