@@ -1,20 +1,20 @@
 ---
 - name: Create data path
   file:
-    path: "{{ generic_postgresql_data_path }}"
+    path: "{{ generic_postgresql_base_path }}"
     state: directory
     recurse: true
     owner: "{{ generic_postgresql_uid }}"
     group: "{{ generic_postgresql_gid }}"
 
-- name: Create subfolders
+- name: Create additional paths
   file:
-    path: "{{ generic_postgresql_data_path }}/{{ item }}"
+    path: "{{ item }}"
     state: directory
     recurse: true
     owner: "{{ generic_postgresql_uid }}"
     group: "{{ generic_postgresql_gid }}"
-  loop: "{{ generic_postgresql_subfolder }}"
+  loop: "{{ generic_postgresql_additional_path }}"
 
 - name: Deploy container
   docker_container:
@@ -22,7 +22,7 @@
     image: "{{ generic_postgresql_container_image }}"
     user: "{{ generic_postgresql_uid }}:{{ generic_postgresql_gid }}"
     published_ports: "{{ generic_postgresql_container_ports }}"
-    env: "{{ generic_postgresql_container_env }}"
+    env: "{{ generic_postgresql_container_env | combine(generic_postgresql_container_additional_env) }}"
     volumes: "{{ generic_postgresql_container_volumes }}"
     links: "{{ generic_postgresql_container_links }}"
     state: "{{ generic_postgresql_container_state }}"

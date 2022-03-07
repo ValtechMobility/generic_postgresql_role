@@ -1,7 +1,10 @@
-generic_postgresql_data_path: /opt/postgresql
-generic_postgresql_subfolder: []
+generic_postgresql_base_path: /opt/postgresql
+generic_postgresql_additional_path: []
 generic_postgresql_uid: 999
 generic_postgresql_gid: 999
+
+generic_postgresql_database_user: ""
+generic_postgresql_database_password: ""
 
 # Ports that should be opened in ufw
 generic_postgresql_allow_firewall_ports: []
@@ -11,9 +14,9 @@ generic_postgresql_container_name: postgresql
 generic_postgresql_container_image: postgres
 generic_postgresql_container_ports: []
 generic_postgresql_container_volumes:
-  - "{{ generic_postgresql_data_path }}:/var/lib/postgresql"
+  - "{{ generic_postgresql_base_path }}:/var/lib/postgresql"
 generic_postgresql_container_links: []
-generic_postgresql_container_env: {}
+generic_sonarqube_container_additional_env: {}
 
 generic_postgresql_container_state: started
 generic_postgresql_container_recreate: no

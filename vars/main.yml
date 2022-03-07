@@ -1,0 +1,3 @@
+generic_postgresql_container_env:
+  POSTGRES_USER: "{{ generic_postgresql_database_user }}"
+  POSTGRES_PASSWORD: "{{ generic_postgresql_database_password }}"
