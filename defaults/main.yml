@@ -1,9 +1,7 @@
 generic_postgresql_data_path: /opt/postgresql
 generic_postgresql_subfolder: []
-generic_postgresql_username: postgresql
-generic_postgresql_uid: 2002
-generic_postgresql_groupname: postgresql
-generic_postgresql_gid: 2002
+generic_postgresql_uid: 999
+generic_postgresql_gid: 999
 
 # Ports that should be opened in ufw
 generic_postgresql_allow_firewall_ports: []

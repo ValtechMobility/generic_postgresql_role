@@ -1,33 +1,19 @@
 ---
-- name: Ensure user exists
-  user:
-    name: "{{ generic_postgresql_username }}"
-    uid: "{{ generic_postgresql_uid }}"
-    create_home: false
-    shell: /sbin/nologin
-    state: present
-
-- name: Ensure group exists
-  group:
-    name: "{{ generic_postgresql_groupname }}"
-    gid: "{{ generic_postgresql_gid }}"
-    state: present
-
 - name: Create data path
   file:
     path: "{{ generic_postgresql_data_path }}"
     state: directory
     recurse: true
-    owner: "{{ generic_postgresql_username }}"
-    group: "{{ generic_postgresql_groupname }}"
+    owner: "{{ generic_postgresql_uid }}"
+    group: "{{ generic_postgresql_gid }}"
 
 - name: Create subfolders
   file:
     path: "{{ generic_postgresql_data_path }}/{{ item }}"
     state: directory
     recurse: true
-    owner: "{{ generic_postgresql_username }}"
-    group: "{{ generic_postgresql_groupname }}"
+    owner: "{{ generic_postgresql_uid }}"
+    group: "{{ generic_postgresql_gid }}"
   loop: "{{ generic_postgresql_subfolder }}"
 
 - name: Deploy container
