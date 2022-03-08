@@ -16,7 +16,7 @@ generic_postgresql_container_ports: []
 generic_postgresql_container_volumes:
   - "{{ generic_postgresql_base_path }}:/var/lib/postgresql"
 generic_postgresql_container_links: []
-generic_sonarqube_container_additional_env: {}
+generic_postgresql_container_additional_env: {}
 
 generic_postgresql_container_state: started
 generic_postgresql_container_recreate: no
