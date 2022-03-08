@@ -13,10 +13,10 @@ Role Variables
 
 For all variables please see `defaults/main.yml`.
 
-    generic_postgresql_container_env:
-      POSTGRES_USER: admin
-      POSTGRES_PASSWORD: password
-Set credentials as environment variables
+    generic_postgresql_database_user: "dummyuser"
+    generic_postgresql_database_password: "dummypassword"
+    
+The credentials need to be set by your own.
 
 
 Dependencies
